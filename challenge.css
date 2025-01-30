@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fffbe6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.pricing-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  width: 250px;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-card.popular {
+  width: 280px;
+  border: 3px solid #ff6600;
+  position: relative;
+  z-index: 1;
+  transform: translateY(-40px);
+  transition: transform 0.3s ease-in-out;
+}
+.pricing-card li::before {
+  content: "☕ ";
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6600;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #222;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.features {
+  list-style: none;
+  margin: 15px 0;
+  padding: 0;
+  text-align: left;
+}
+
+.features li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  padding-left: 15px;
+}
+
+.subscribe-btn {
+  background: #ff9d00;
+  color: black;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background: #ff6600;
+  transform: translateY(-8px);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card,
+  .pricing-card.popular {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .pricing-card.popular {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .pricing-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px;
+  }
+
+  .subscribe-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
